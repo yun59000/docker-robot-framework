@@ -42,7 +42,10 @@ jobs:
       - name: Tag
         run:
           docker tag $IMAGE_NAME yun59/robot3:new
+  push:
+    runs-on: self-hosted        
+    needs: build
+    steps:      
       - name: Push
         run:
-          docker push yun59/robot3:new
-          
+          docker push yun59/robot3:new         

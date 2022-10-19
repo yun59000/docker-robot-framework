@@ -21,7 +21,7 @@ jobs:
   # Run tests.
   # See also https://docs.docker.com/docker-hub/builds/automated-testing/
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     # run all our tests on each browser
     strategy:
       matrix:

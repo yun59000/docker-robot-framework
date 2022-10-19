@@ -60,14 +60,21 @@ COPY bin/run-tests-in-virtual-screen.sh /opt/robotframework/bin/
 # Install system dependencies
 RUN dnf upgrade -y --refresh \
   && dnf install -y \
-    chromedriver-${CHROMIUM_VERSION}* \
-    chromium-${CHROMIUM_VERSION}* \
-    firefox-${FIREFOX_VERSION}* \
     npm \
     nodejs \
     python3-pip \
     tzdata \
     xorg-x11-server-Xvfb-${XVFB_VERSION}* \
+  && dnf clean all
+  
+RUN dnf install -y \
+    chromedriver-${CHROMIUM_VERSION}*
+
+RUN dnf install -y \    
+    chromium-${CHROMIUM_VERSION}*
+
+RUN dnf install -y \
+    firefox-${FIREFOX_VERSION}* \
   && dnf clean all
 
 # FIXME: below is a workaround, as the path is ignored

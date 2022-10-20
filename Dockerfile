@@ -146,4 +146,4 @@ WORKDIR ${ROBOT_WORK_DIR}
 
 # Execute all robot tests
 #CMD ["run-tests-in-virtual-screen.sh"]
-CMD ["echo xvfb-run --server-args='-screen 0 1920x1080x24 -ac' robot","/bin/bash"]
+CMD ["echo", "xvfb-run --server-args='-screen 0 1920x1080x24 -ac' robot";"/bin/bash"]

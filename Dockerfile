@@ -128,7 +128,7 @@ RUN mkdir -p ${ROBOT_REPORTS_DIR} \
   && mkdir -p /opt/robotframework/tests \
   && chown ${ROBOT_UID}:${ROBOT_GID} ${ROBOT_REPORTS_DIR} \
   && chown ${ROBOT_UID}:${ROBOT_GID} ${ROBOT_WORK_DIR} \
-  && chown ${ROBOT_UID}:${ROBOT_GID} /opt/robotframework/test \
+  && chown ${ROBOT_UID}:${ROBOT_GID} /opt/robotframework/tests \
   && chmod ugo+w ${ROBOT_REPORTS_DIR} ${ROBOT_WORK_DIR}
 
 # Allow any user to write logs

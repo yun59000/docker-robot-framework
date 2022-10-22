@@ -125,7 +125,7 @@ RUN rfbrowser init
 # These folders are writeable by anyone, to ensure the user can be changed on the command line.
 RUN mkdir -p ${ROBOT_REPORTS_DIR} \
   && mkdir -p ${ROBOT_WORK_DIR} \
-  && mkdir -p /opt/robotframework/test \
+  && mkdir -p /opt/robotframework/tests \
   && chown ${ROBOT_UID}:${ROBOT_GID} ${ROBOT_REPORTS_DIR} \
   && chown ${ROBOT_UID}:${ROBOT_GID} ${ROBOT_WORK_DIR} \
   && chown ${ROBOT_UID}:${ROBOT_GID} /opt/robotframework/test \

@@ -125,8 +125,10 @@ RUN rfbrowser init
 # These folders are writeable by anyone, to ensure the user can be changed on the command line.
 RUN mkdir -p ${ROBOT_REPORTS_DIR} \
   && mkdir -p ${ROBOT_WORK_DIR} \
+  && mkdir -p /opt/robotframework/test \
   && chown ${ROBOT_UID}:${ROBOT_GID} ${ROBOT_REPORTS_DIR} \
   && chown ${ROBOT_UID}:${ROBOT_GID} ${ROBOT_WORK_DIR} \
+  && chown ${ROBOT_UID}:${ROBOT_GID} /opt/robotframework/test \
   && chmod ugo+w ${ROBOT_REPORTS_DIR} ${ROBOT_WORK_DIR}
 
 # Allow any user to write logs
